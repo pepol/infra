@@ -1,0 +1,34 @@
+$TTL 300
+
+10.in-addr.arpa.  3600    IN  SOA ns1.a. peter.polacik.org (
+  2020040301  ; serial
+  7200        ; refresh (2h)
+  3600        ; retry (1h)
+  1209600     ; expire (2w)
+  3600        ; minimum (1h)
+)
+10.in-addr.arpa.  3600    IN  NS  ns1.a.
+10.in-addr.arpa.  3600    IN  NS  ns2.a.
+
+; 10.32.0.0/12 IP range
+; IPmin: 10.32.0.1
+; IPmax: 10.47.255.254
+
+; 10.32.0.0/16 - INFRA subnet
+1.0.32.10.in-addr.arpa.   IN  PTR gw.vpn.a.
+10.1.32.10.in-addr.arpa.  IN  PTR ns1.a.
+10.2.32.10.in-addr.arpa.  IN  PTR ns2.a.
+
+; 10.41.0.0/16 - VNT subnet
+; Sub ranges:
+;   10.41.0.0/21 - infra
+;   10.41.8.0/21 - ppx
+;     10.41.9.0/24 - DHCP
+;   10.41.16.0/21 - ikx
+;     10.41.17.0/24 - DHCP
+1.0.41.10.in-addr.arpa.   IN  PTR router-01.vnt.a.
+1.8.41.10.in-addr.arpa.   IN  PTR switch-01.vnt.a.
+1.16.41.10.in-addr.arpa.  IN  PTR switch-02.vnt.a.
+
+; 10.42.0.0/16 - BTS subnet
+1.0.42.10.in-addr.arpa.   IN  PTR router-01.bts.a.

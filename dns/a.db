@@ -1,0 +1,24 @@
+$ORIGIN a.
+$TTL 300
+
+@ 3600        IN  SOA ns1.a. peter.polacik.org. (
+  2020040301  ; serial
+  7200        ; refresh (2h)
+  3600        ; retry (1h)
+  1209600     ; expire (2w)
+  3600        ; minimum (1h)
+)
+
+  3600        IN  NS  ns1.a.
+  3600        IN  NS  ns2.a.
+
+ns1           IN  A   10.32.1.10
+ns2           IN  A   10.32.2.10
+
+gw.vpn        IN  A   10.32.0.1
+
+router-01.vnt IN  A   10.41.0.1
+switch-01.vnt IN  A   10.41.8.1
+switch-02.vnt IN  A   10.41.16.1
+
+router-01.bts IN  A   10.42.0.1

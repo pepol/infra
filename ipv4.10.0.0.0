@@ -1,0 +1,19 @@
+10.32.0.0/12 net/ppx
+
+10.32.0.0/24 net/ppx/wg
+10.41.0.0/16 net/ppx/vnt
+10.42.0.0/16 net/ppx/bts
+
+gw.vpn.a
+10.32.0.1 net/ppx/wg
+
+router01.vnt.a
+10.32.0.2 net/ppx/wg
+10.41.0.1 net/ppx/vnt
+
+router01.bts.a
+10.32.0.3 net/ppx/wg
+10.42.0.1 net/ppx/bts
+
+motoone.ppx.a
+10.32.0.4 net/ppx/wg
